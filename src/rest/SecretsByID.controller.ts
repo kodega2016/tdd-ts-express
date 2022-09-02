@@ -1,13 +1,14 @@
 import { NextFunction, Request, Response } from "express";
-import { SecretNotFoundError } from "../SecretNotFoundError";
 import { URLID } from "../URLID";
+import { SecretRetriever } from "./SecretRetriever";
 
 export class SecretsByIDController {
-  getSecret = (req: Request, res: Response, next: NextFunction) => {
+  constructor(private secretRetriever: SecretRetriever) {}
+
+  getSecret = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      // next(new SecretNotFoundError());
       const urlID = new URLID(req.params.id);
-      throw new SecretNotFoundError();
+      const secret = await this.secretRetriever.retrieveSecretById(urlID);
     } catch (e) {
       next(e);
     }

@@ -6,6 +6,7 @@ import { SecretsByIdRoute } from "./rest/SecretsByID.route";
 
 const secretsByIDController: SecretsByIDController =
   new SecretsByIDController();
+
 const secretsByIdRoute: SecretsByIdRoute = new SecretsByIdRoute(
   secretsByIDController
 );
