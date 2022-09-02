@@ -4,8 +4,11 @@ import { Route } from "./infra/rest/route";
 import { SecretsByIDController } from "./infra/rest/SecretsByID.controller";
 import { SecretsByIdRoute } from "./infra/rest/SecretsByID.route";
 
-const secretsByIDController: SecretsByIDController =
-  new SecretsByIDController();
+const secretsByIDController: SecretsByIDController = new SecretsByIDController({
+  retrieveSecretById: (id) => {
+    return new Promise(() => "a");
+  },
+});
 
 const secretsByIdRoute: SecretsByIdRoute = new SecretsByIdRoute(
   secretsByIDController
