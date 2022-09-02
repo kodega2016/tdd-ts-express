@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "target": "ES6",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "outDir": "build/"
+    },
+    "include": ["src","test"],
+    "exclude": ["node_modules"]
+}
