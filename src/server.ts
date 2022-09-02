@@ -1,8 +1,8 @@
 import { Application } from "express";
-import { App } from "./rest/app";
-import { Route } from "./rest/route";
-import { SecretsByIDController } from "./rest/SecretsByID.controller";
-import { SecretsByIdRoute } from "./rest/SecretsByID.route";
+import { App } from "./infra/rest/app";
+import { Route } from "./infra/rest/route";
+import { SecretsByIDController } from "./infra/rest/SecretsByID.controller";
+import { SecretsByIdRoute } from "./infra/rest/SecretsByID.route";
 
 const secretsByIDController: SecretsByIDController =
   new SecretsByIDController();

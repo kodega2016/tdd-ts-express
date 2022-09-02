@@ -1,4 +1,4 @@
-import { SecretNotFoundError } from "../../src/SecretNotFoundError";
+import { SecretNotFoundError } from "../../../../src/domain/errors/SecretNotFoundError";
 
 describe("SecretNotFoundError", () => {
   it("it should return an error of SecretNotFoundError", () => {

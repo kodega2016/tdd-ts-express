@@ -1,7 +1,7 @@
 import { NextFunction, request, Request, response, Response } from "express";
-import { errorHandler } from "../../src/rest/ErrorHandler";
-import { SecretNotFoundError } from "../../src/SecretNotFoundError";
-import { URLIDValidationError } from "../../src/URLIDValidationError";
+import { SecretNotFoundError } from "../../../../../src/domain/errors/SecretNotFoundError";
+import { URLIDValidationError } from "../../../../../src/domain/errors/URLIDValidationError";
+import { errorHandler } from "../../../../../src/infra/rest/middlewares/ErrorHandler";
 
 describe("ErrorHandler", () => {
   it("should generate an error response for a URLIDValidationError", () => {

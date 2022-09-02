@@ -1,9 +1,9 @@
 import { request, Request, response, Response } from "express";
-import { SecretRetriever } from "../../src/rest/SecretRetriever";
-import { SecretsByIDController } from "../../src/rest/SecretsByID.controller";
-import { SecretNotFoundError } from "../../src/SecretNotFoundError";
-import { URLID } from "../../src/URLID";
-import { URLIDValidationError } from "../../src/URLIDValidationError";
+import { SecretNotFoundError } from "../../src/domain/errors/SecretNotFoundError";
+import { URLIDValidationError } from "../../src/domain/errors/URLIDValidationError";
+import { URLID } from "../../src/domain/models/URLID";
+import { SecretsByIDController } from "../../src/infra/rest/SecretsByID.controller";
+import { SecretRetriever } from "../../src/services/SecretRetriever";
 
 describe("SecretsByIDController", () => {
   it("it should throw an error when the url is too short", () => {
